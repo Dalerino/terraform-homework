@@ -45,8 +45,9 @@ variable region {
 }
 
 variable ports {
-    description = "Provide ports to allow access to ec2 instance"
-    type = list
+  description = "List of ports to open"
+  type        = list(number)
+  default     = [22, 80, 443]
 }
 
 variable availability_zone {
