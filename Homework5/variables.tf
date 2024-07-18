@@ -3,8 +3,12 @@ variable region {
 }
 
 variable vpc_cidr {
-    type = string
-}
+    type = list(object({
+        cidr_block = string
+        dns_support = bool
+        dns_hostnames = bool
+    }))
+    }
 
 variable ip_on_launch {
     type = bool
@@ -40,6 +44,7 @@ variable ec2_instances {
 variable dns_support {
     type = bool
 }
+
 
 variable dns_hostnames {
     type = bool
